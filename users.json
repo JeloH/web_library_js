@@ -1,0 +1,6 @@
+[ { "email":"george.tsang@senecacollege.ca", "password":"123456" }, 
+{ "email":"john@beatles.uk", "password":"lennonj" }, 
+{ "email":"paul@beatles.uk", "password":"mccartney" }, 
+{ "email":"george@beatles.uk", "password":"harrison" }, 
+{ "email":"ringo@beatles.uk", "password":"starrr!!" }, 
+{ "email":"mick@rollingstones.uk", "password":"jaggerm!" }]
