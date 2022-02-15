@@ -1,3 +1,3 @@
-# web_library_js
+# weblibraryjs
 
 Web library test
