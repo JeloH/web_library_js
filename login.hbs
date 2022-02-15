@@ -1,0 +1,39 @@
+<div class="row justify-content-md-center" style="margin-top: 100px">
+
+
+  <div style="text-align: center; height:400; Background-image: url('https://www.irishtimes.com/polopoly_fs/1.4793823.1644235015!/image/image.jpg_gen/derivatives/ratio_4x3_w1200/image.jpg');" >
+<H1> Web Book Library <H1>
+<br/>
+<br/>
+<br/>
+ </div>
+
+    <div   style="text-align: center; background-color:pink">
+
+        {{#if message}}
+            <div class="alert {{messageClass}}" role="alert">
+                {{message}}
+            </div>
+        {{/if}}
+
+
+        <form method="POST" action="/login">
+            <div class="form-group">
+<br/>
+                <label for="exampleInputEmail1">Email address</label>
+                <input name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Sign In</button>
+
+<H2>
+    <a class="btn btn-primary btn-lg active" href="/register">Register</a>
+</H2> 
+
+        </form>
+        
+    </div>
+</div>
