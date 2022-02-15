@@ -69,6 +69,14 @@ app.use((req, res, next) => {
     next();
 });
 
+
+
+var hbs = exphbs.create({ /* config */ });
+
+// Register `hbs.engine` with the Express app.
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+
  
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
