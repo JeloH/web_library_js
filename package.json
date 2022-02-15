@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
-
-
-
  "scripts": {
     "start": "node app.js", 
     "test": "echo \"Error: no test specified\" && exit 1" 
@@ -17,8 +14,7 @@
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.4",
     "express": "^4.17.1",
-    "hbs" :"^8.3.1",
-    
+    "hbs" :"*",    
     "express-handlebars": "^3.1.0"
   }
 }
