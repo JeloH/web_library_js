@@ -14,6 +14,16 @@ var users = [];
 
 
 
+const hbs = require("hbs");
+
+
+app.set("view engine", "hbs");
+app.use(express.static(__dirname + "/views"));
+
+hbs.registerPartials(__dirname + "/views");
+
+
+
 // Read Json file
 const fs3 = require('fs');
 
@@ -71,11 +81,11 @@ app.use((req, res, next) => {
 
 
 
-var hbs = exphbs.create({ /* config */ });
+//var hbs = exphbs.create({ /* config */ });
 
 // Register `hbs.engine` with the Express app.
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
+//app.engine('handlebars', hbs.engine);
+//app.set('view engine', 'handlebars');
 
  
 app.set('views', path.join(__dirname, 'views'));
