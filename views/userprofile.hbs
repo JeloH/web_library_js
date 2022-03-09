@@ -11,86 +11,168 @@
 <div style="background-color:black; height:400; text-align: center; Background-image: url('https://ideasonfire.net/wp-content/uploads/2020/07/Last-Checks-to-Do-Before-Submitting-a-Book-Proposal-blog.jpg') ; padding:20px">
  
 
-<button type="button">Borrow!</button>
+
+
 
 <br/>
 
 
-<div>
-  <input type="checkbox" id="1" name="scales"
-         checked>
-  <label for="scales">To Kill a Mockingbird, by Harper Lee.</label>
+
+<div class="row"    style="align:center">
+
+
+  <div class="column">
+
+
+
+
+
+
 </div>
 
 
+
+
+
+<div class="center">
+
+<div class="row">
+  <div class="column " style="background-color:#aaa;">
+    <h2>Column 1</h2>
+   
+
+<div id="div1">
+
+   
+   
+  
+  
+
+
+
+    <ul class="chk-container">
+        <li><input class="ck1" type="checkbox" value="ed4s1xx2/">The Shining</li>
+        <li><input class="ck1" type="checkbox" value="item2">Rainbow Six</li>
+        <li><input class="ck1" type="checkbox" value="item3">Steve Jobs</li>
+        <li><input class="ck1" type="checkbox" value="item4">Elon Musk</li>
+        <li><input class="ck1" type="checkbox" value="item5">Pride and Prejudice</li>
+        <li><input class="ck1" type="checkbox" value="item6">Rules of Prey </li>
+    </ul>
+</div>
+
+<button id="btn-add">Borrow</button>
+
+  </div>
+
+
+<div class="column " style=" width: 60%;">
+ 
+</div>
+
+
+ <div class="column" style="background-color:#bbb;">
+    <h2>Column 2</h2>
+    
+<div id="div2" align="right" >
+    <ul class="chk-container-Add">
+        <li><input class="ck1" type="checkbox" value="item7">The C Programming</li>
+        <li><input class="ck1" type="checkbox" value="item8">Mortal Stakes </li>
+        <li><input class="ck1" type="checkbox" value="item9">Exit Lines </li>
+        <li><input class="ck1" type="checkbox" value="item10">Point of Impact </li>
+
+  
+    </ul>
+</div>
+
+<button id="btn-remove">Return</button>
+
+
+  </div>
+
+
+
+<div>
+
+
+
+
+
+
+
+
+
+  <div class="column">
 
  
 
+<div></div>
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<table>
+  <tr>
+    <td>
+
+
+
+
+
+
+</td>
+    <td> </td>
+
+
+    <td>
+
+
+
+
+
+</td>
+  </tr>
+  
+</table>
+
+
+
+</div>
+
+
+
+
+
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript">
  
- 
 
+$(document).ready(function() {
+    $('#btn-add').click(function(){
+        $('#div1 input[type="checkbox"]:checked').each(function() {
+            $('.chk-container-Add').append("<li><input class='checkbox2' type='checkbox' value='"+$(this).val()+"'>"+$(this).parent().text()+"</li>");
+            $(this).parent().remove();
+        });
+    });
 
+    $('#btn-remove').click(function(){
+        $('#div2 input[type="checkbox"]:checked').each(function() {
+            $('.chk-container').append("<li><input class='checkbox2' type='checkbox' value='"+$(this).val()+"'>"+$(this).parent().text()+"</li>");
+            $(this).parent().remove();
+        });
+    });
 
-<div>
-  <input type="checkbox" id="2" name="horns">
-  <label for="horns">1984, by George Orwell.</label>
-</div>
+});
 
-
-<div>
-  <input type="checkbox" id="3" name="horns">
-  <label for="horns">Harry Potter and the Philosopher's Stone, by J.K. Rowling.</label>
-</div>
-
-
-
-<div>
-  <input type="checkbox" id="4" name="horns">
-  <label for="horns">The Lord of the Rings, by J.R.R. Tolkien.</label>
-</div>
-
-
-
-<div>
-  <input type="checkbox" id="5" name="horns">
-  <label for="horns">The Great Gatsby, by F. ...</label>
-</div>
-
-
-
-<div>
-  <input type="checkbox" id="6" name="horns">
-  <label for="horns">The Book Thief, by Markus Zusak.</label>
-</div>
-
-
-
-<div>
-  <input type="checkbox" id="7" name="horns">
-  <label for="horns">Wuthering Heights, by Emily Bronte</label>
-</div>
-
-
-<div>
-  <input type="checkbox" id="8" name="horns">
-  <label for="horns">The Diary Of A Young Girl, by Anne Frank.</label>
-</div>
-
-<div>
-  <input type="checkbox" id="9" name="horns">
-  <label for="horns">Pride and Prejudice, by Jane Austen.</label>
-</div>
-
-
-
-
-<div>
-  <input type="checkbox" id="10" name="horns">
-  <label for="horns">The Color Purple, by Alice Walker</label>
-</div>
-
-
-
-</h1>
-
-</div>
+</script>
