@@ -266,7 +266,16 @@ data2="";
 
 app.get('/userprofile', (req, res) => {
     if (req.user) {
-        res.render('userprofile');
+       // res.render('userprofile');
+          res.render('userprofile', {
+            welcome_useremail: req.user,
+            messageClass: 'alert-danger'
+        });  
+     
+     
+     
+     
+     
     } else {
         res.render('login', {
             message: 'Please login to continue',
