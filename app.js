@@ -374,6 +374,16 @@ res.render('userprofile', {
             message:  rst,
             welcome_useremail: req.user,
             BookBorrowed1: JSON.stringify(result2[0]),
+            Book1:  JSON.stringify(booklist1[0]),
+            Book2:  JSON.stringify(booklist1[1]),
+            Book3:  JSON.stringify(booklist1[2]),
+            Book4:  JSON.stringify(booklist1[3]),
+            Book5:  JSON.stringify(booklist1[4]),
+            Book6:  JSON.stringify(booklist1[5]),
+            Book7:  JSON.stringify(booklist1[6]),
+            Book8:  JSON.stringify(booklist1[7]),
+            Book9:  JSON.stringify(booklist1[8]),
+            Book10:  JSON.stringify(booklist1[9]),
            messageClass: 'alert-danger'
         });
 
