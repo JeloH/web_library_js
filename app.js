@@ -301,18 +301,108 @@ data2="";
 });
 
 app.get('/userprofile', (req, res) => {
-    if (req.user) {
+   
+ if (req.user) {
+
+
        // res.render('userprofile');
-          res.render('userprofile', {
+
+
+var MongoClient = require('mongodb').MongoClient;
+var url = 'mongodb+srv://mongo21:mongo21mongo21@cluster0.7l5pq.mongodb.net/sample_mflix?retryWrites=true&w=majority';
+
+
+
+
+
+
+
+MongoClient.connect(url, function(err, db) {
+  if (err) throw err;
+  var dbo = db.db("Book");
+  /*Return only the documents where the address starts with an "S":*/
+
+
+
+  var query = { Available: { $in: ['false'] } };
+  dbo.collection("Books").find(query).toArray(function(err, booklist1) {
+    if (err) throw err;
+    console.log(  booklist1 );
+
+
+
+
+
+
+
+// Read clients from MongoDB from Clients
+
+MongoClient.connect(url, function(err, db) {
+  if (err) throw err;
+  var dbo = db.db("Book");
+  /*Return only the documents where the address starts with an "S":*/
+
+
+
+  var query = { UserName: { $in: [req.user] } };
+  dbo.collection("Clients").find(query).toArray(function(err, result1) {
+    if (err) throw err;
+    console.log( result1[0] );
+
+
+
+
+
+
+
+
+// Showing Borrowed-Books for clients from Books
+
+MongoClient.connect(url, function(err, db) {
+  if (err) throw err;
+  var dbo = db.db("Book"); 
+
+  var query = { ID: { $in: [result1[0].IDBooksBorrowed]  } };
+  dbo.collection("Books").find(query).toArray(function(err, result2) {
+    if (err) throw err;
+    console.log(result2);
+
+
+ 
+
+res.render('userprofile', {
+            message:  rst,
             welcome_useremail: req.user,
-            messageClass: 'alert-danger'
-        });  
-     
-     
-     
-     
-     
-    } else {
+           messageClass: 'alert-danger'
+        });
+
+ 
+ 
+    db.close();
+  });
+});
+
+
+
+    db.close();
+  });
+});
+
+
+
+
+
+    db.close();
+  });
+});
+
+
+
+
+
+
+
+  } else {
         res.render('login', {
             message: 'Please login to continue',
             messageClass: 'alert-danger'
@@ -320,5 +410,9 @@ app.get('/userprofile', (req, res) => {
     }
 });
 
-app.listen(process.env.PORT || 5000);
 
+
+
+
+
+app.listen(process.env.PORT || 5000);
