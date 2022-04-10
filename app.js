@@ -373,6 +373,7 @@ MongoClient.connect(url, function(err, db) {
 res.render('userprofile', {
             message:  rst,
             welcome_useremail: req.user,
+            BookBorrowed1: JSON.stringify(result2[0]),
            messageClass: 'alert-danger'
         });
 
