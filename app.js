@@ -24,6 +24,42 @@ hbs.registerPartials(__dirname + "/views");
 
 
 
+
+
+ 
+// Read Mongodb 
+
+var MongoClient = require('mongodb').MongoClient;
+
+var  rst="";
+
+const url = `mongodb+srv://mongo21:mongo21mongo21@cluster0.7l5pq.mongodb.net/sample_mflix?retryWrites=true&w=majority`;
+
+MongoClient.connect(url, function(err, db) {
+  if (err) throw err;
+  var dbo = db.db("Book");
+
+
+ 
+console.log(dbo.collection("Clients").find( { IDBooksBorrowed: "44444" } ));
+ 
+  dbo.collection("Books").find({}, { 
+         projection: { Title: 1, ID:2, Available:3, Author:4} }).toArray(function(err, result) {
+    if (err) throw err;
+    rst=result;
+
+
+
+    
+    db.close();
+  });
+
+});
+
+
+
+
+
 // Read Json file
 const fs3 = require('fs');
 
