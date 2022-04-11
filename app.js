@@ -315,19 +315,17 @@ var url = 'mongodb+srv://mongo21:mongo21mongo21@cluster0.7l5pq.mongodb.net/sampl
 
 
 
+(async () => {
+
+let conn=await MongoClient.connect(url);
+let dbo = conn.db("Book");
 
 
-MongoClient.connect(url, function(err, db) {
-  if (err) throw err;
-  var dbo = db.db("Book");
   /*Return only the documents where the address starts with an "S":*/
 
-
-
-  var query = { Available: { $in: ['false'] } };
-  dbo.collection("Books").find(query).toArray(function(err, booklist1) {
-    if (err) throw err;
-    console.log(  booklist1 );
+  var query = { Available: { $in: ['true'] } };
+const booklist1 =  await dbo.collection("Books").find(query).toArray(); 
+    console.log( booklist1 );
 
 
 
@@ -403,10 +401,7 @@ res.render('userprofile', {
 
 
 
-    db.close();
-  });
-});
-
+})();   
 
 
 
